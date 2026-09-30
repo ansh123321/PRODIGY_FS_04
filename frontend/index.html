@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Real-Time Chat</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- Login -->
+        <section id="authScreen" class="auth-screen">
+
+            <div class="auth-card">
+
+                <h1>Real-Time Chat</h1>
+                <p>Create an account or sign in.</p>
+
+                <div class="auth-tabs">
+                    <button id="loginTab" class="active">Login</button>
+                    <button id="registerTab">Register</button>
+                </div>
+
+                <form id="authForm">
+
+                    <input
+                        id="username"
+                        type="text"
+                        placeholder="Username"
+                        autocomplete="username"
+                        hidden
+                    >
+
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="Email"
+                        required
+                    >
+
+                    <input
+                        id="password"
+                        type="password"
+                        placeholder="Password"
+                        required
+                    >
+
+                    <button type="submit" id="authButton">
+                        Login
+                    </button>
+
+                </form>
+
+                <p id="authMessage"></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Chat -->
+        <section id="chatScreen" class="chat-screen hidden">
+
+            <aside class="sidebar">
+
+                <div class="sidebar-header">
+                    <div>
+                        <h2>Chatter</h2>
+                        <span>Real-time messaging</span>
+                    </div>
+
+                    <button id="logoutButton">Logout</button>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="section-title">DIRECT MESSAGES</div>
+                    <div id="userList" class="user-list"></div>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="section-title">CHAT ROOMS</div>
+                    <div id="roomList" class="room-list"></div>
+                </div>
+
+            </aside>
+
+
+            <section class="conversation">
+
+                <header class="conversation-header">
+
+                    <div>
+                        <h2 id="chatUsername">
+                            Select a user
+                        </h2>
+
+                        <span id="chatStatus"></span>
+                    </div>
+
+                </header>
+
+
+                <div id="messages" class="messages">
+
+                    <div class="empty-state">
+                        Select someone to start chatting.
+                    </div>
+
+                </div>
+
+
+                <form id="messageForm" class="message-form">
+
+                    <input
+                        id="messageInput"
+                        type="text"
+                        placeholder="Type a message..."
+                        autocomplete="off"
+                        disabled
+                    >
+
+                    <button type="submit" disabled>
+                        Send
+                    </button>
+
+                </form>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
