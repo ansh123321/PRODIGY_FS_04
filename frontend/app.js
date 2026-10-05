@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000";
+const API_URL = "https://chatter-backend-09q6.onrender.com";
 
 let socket = null;
 let token = localStorage.getItem("token");
