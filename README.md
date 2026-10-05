@@ -1,24 +1,58 @@
 # 💬 Chatter — Real-Time Chat Application
 
-Chatter is a full-stack real-time messaging application built during my Full-Stack Web Development internship at Prodigy InfoTech.
+Chatter is a full-stack real-time messaging application built during my **Full-Stack Web Development Internship at Prodigy InfoTech**.
 
-The project focuses on real-time communication, user authentication, private messaging, chat rooms, online/offline status, and persistent message storage.
+The application provides real-time communication between users with authentication, private messaging, chat rooms, online/offline status, and persistent message storage.
+
+The project was built using **Node.js, Express.js, MongoDB, Socket.IO, JWT, and vanilla JavaScript**.
+
+---
+
+## 🚀 Live Demo
+
+🌐 **Live Application:**  
+https://chatter-frontend-ix8l.onrender.com/
+
+📦 **Source Code:**  
+https://github.com/ansh123321/PRODIGY_FS_04
 
 ---
 
 ## ✨ Features
 
-- 👤 User registration and login
-- 🔐 JWT-based authentication
-- 🔒 Secure password hashing with bcrypt
-- 💬 Real-time private messaging
-- 👥 Real-time chat rooms
-- 🟢 Online/offline user status
-- 💾 Persistent message history
-- 🕒 Message timestamps
-- 🔄 Automatic session restoration
-- 📱 Responsive dark-themed interface
-- ✅ Message length validation
+### 🔐 Authentication
+
+- User registration
+- User login
+- JWT-based authentication
+- Secure password hashing using bcrypt
+- Automatic session restoration
+- Logout functionality
+
+### 💬 Real-Time Messaging
+
+- Real-time private messaging
+- Real-time chat rooms
+- Instant message delivery using Socket.IO
+- Persistent message history
+- Message timestamps
+- Message length validation
+
+### 🟢 User Presence
+
+- Online/offline user status
+- Real-time presence updates
+- Active user indication
+
+### 🎨 User Interface
+
+- Modern dark-themed interface
+- Glassmorphism-inspired design
+- Electric violet/indigo accent colors
+- Responsive layout
+- Interactive message bubbles
+- Smooth UI animations
+- Scrollable conversations and user lists
 
 ---
 
@@ -36,7 +70,7 @@ The project focuses on real-time communication, user authentication, private mes
 - Node.js
 - Express.js
 - Socket.IO
-- JWT
+- JSON Web Token (JWT)
 - bcrypt
 
 ### Database
@@ -44,26 +78,40 @@ The project focuses on real-time communication, user authentication, private mes
 - MongoDB
 - Mongoose
 
+### Deployment
+
+- Render
+- GitHub
+
 ---
 
-## 📁 Project Structure
+## 🏗️ Application Architecture
 
 ```text
-PRODIGY_FS_04/
-│
-├── backend/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   ├── sockets/
-│   ├── package.json
-│   └── server.js
-│
-├── frontend/
-│   ├── index.html
-│   ├── style.css
-│   └── app.js
-│
-└── README.md
-
-```
+                    ┌─────────────────────┐
+                    │      Frontend       │
+                    │                     │
+                    │ HTML / CSS / JS     │
+                    │ Socket.IO Client    │
+                    └──────────┬──────────┘
+                               │
+                               │ HTTP / WebSocket
+                               ▼
+                    ┌─────────────────────┐
+                    │       Backend       │
+                    │                     │
+                    │ Node.js             │
+                    │ Express.js          │
+                    │ Socket.IO           │
+                    │ JWT Authentication  │
+                    └──────────┬──────────┘
+                               │
+                               │ Mongoose
+                               ▼
+                    ┌─────────────────────┐
+                    │      MongoDB        │
+                    │                     │
+                    │ Users               │
+                    │ Messages            │
+                    │ Chat Data            │
+                    └─────────────────────┘
